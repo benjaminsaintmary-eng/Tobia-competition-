@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مسابقة سفر طوبيا</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: #101827;
+  color: #fff;
+  line-height: 1.8;
+}
+
+header {
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #172438;
+  border-bottom: 1px solid #34445b;
+}
+
+.logo {
+  color: #e9c77b;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 75px 20px;
+  text-align: center;
+  background: linear-gradient(145deg,#203c56,#111c30);
+}
+
+.hero small {
+  color: #e9c77b;
+  font-size: 16px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin: 15px 0;
+}
+
+.hero p {
+  color: #c5d0df;
+  max-width: 550px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  background: #d5ad60;
+  color: #172438;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+section {
+  padding: 45px 7%;
+}
+
+.section-title {
+  text-align: center;
+  color: #e9c77b;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.info {
+  background: #1b2a40;
+  border: 1px solid #354761;
+  border-radius: 15px;
+  padding: 22px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.chapters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(135px,1fr));
+  gap: 14px;
+}
+
+.chapter {
+  background: #1b2a40;
+  border: 1px solid #354761;
+  border-radius: 12px;
+  padding: 18px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.chapter:hover {
+  background: #293e59;
+  transform: translateY(-3px);
+}
+
+.number {
+  color: #e9c77b;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.chapter p {
+  color: #c5d0df;
+  font-size: 14px;
+}
+
+footer {
+  background: #172438;
+  color: #aab8ca;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+@media(max-width:500px) {
+  .hero h1 {font-size:28px;}
+  section {padding:35px 5%;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">✦ مسابقة طوبيا</div>
+  <div>سفر طوبيا</div>
+</header>
+
+<div class="hero">
+  <small>رحلة إيمانية ومعرفية</small>
+  <h1>مرحباً بك في مسابقة سفر طوبيا</h1>
+  <p>
+    اكتشف أحداث السفر، واختبر معلوماتك،
+    وتقدم في رحلة مليئة بالأسئلة والتحديات.
+  </p>
+  <a href="#chapters" class="btn">ابدأ المسابقة</a>
+</div>
+
+<section>
+  <div class="section-title">عن المسابقة</div>
+  <div class="info">
+    <h2>رحلتك تبدأ من هنا</h2>
+    <p>
+      تعرّف على أحداث سفر طوبيا من خلال
+      الإصحاحات والأسئلة والأنشطة التفاعلية.
+    </p>
+  </div>
+</section>
+
+<section id="chapters">
+  <h2 class="section-title">إصحاحات سفر طوبيا</h2>
+  <div class="chapters" id="chapterList"></div>
+</section>
+
+<footer>
+  <p>مسابقة سفر طوبيا</p>
+  <p>© جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+const list = document.getElementById("chapterList");
+
+for(let i=1;i<=14;i++){
+  const card = document.createElement("div");
+  card.className = "chapter";
+  card.innerHTML = `
+    <div class="number">${i}</div>
+    <strong>الإصحاح ${i}</strong>
+    <p>قريباً: أسئلة الإصحاح</p>
+  `;
+  card.onclick = () => {
+    alert("سيتم إضافة أسئلة الإصحاح " + i + " قريباً");
+  };
+  list.appendChild(card);
+}
+</script>
+
+</body>
+</html>
